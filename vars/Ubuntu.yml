@@ -1,0 +1,12 @@
+---
+# vars file for roles/ansible-role-lxde-install
+os_packages:
+- supervisor
+- tree
+- vim-tiny
+
+lxde_packages:
+- xorg
+- lxde
+- firefox
+

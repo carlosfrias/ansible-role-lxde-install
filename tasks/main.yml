@@ -1,0 +1,25 @@
+---
+# tasks file for roles/ansible-role-lxde-install
+- name: Update variables
+  include_vars: "{{ ansible_distribution }}.yml"
+
+- name: Update system packages
+  apt:
+    name: "{{ item }}"
+    install_recommends: no
+    state: present
+    update_cache: yes
+  with_items:
+  - "{{ os_packages }}"
+  - "{{ lxde_packages }}"
+
+- name: Configure lxsession
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+  - { src: 'supervisord.conf.j2', dest: '/etc/supervisor/supervisord.conf'}
+  - { src: 'lxsession-supervisord.conf.j2', dest: '/etc/supervisor/lxsession.conf'}
+  notify:
+  - "Restart Supervisor"
+
