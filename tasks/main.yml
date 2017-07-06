@@ -13,13 +13,19 @@
   - "{{ os_packages }}"
   - "{{ lxde_packages }}"
 
+- name: Setup target folders
+  file:
+    path: "{{ item.dest | dirname }}"
+    state: directory
+  with_items:
+  - "{{ template_files }}"
+
 - name: Configure lxsession
   template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
-  - { src: 'supervisord.conf.j2', dest: '/etc/supervisor/supervisord.conf'}
-  - { src: 'lxsession-supervisord.conf.j2', dest: '/etc/supervisor/conf.d/lxsession.conf'}
+  - "{{ template_files }}"
   notify:
   - "Restart Supervisor"
 

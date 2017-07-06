@@ -10,3 +10,6 @@ lxde_packages:
 - lxde
 - firefox
 
+template_files:
+- { src: 'supervisord.conf.j2', dest: '/etc/supervisor/supervisord.conf'}
+- { src: 'lxsession-supervisord.conf.j2', dest: '/etc/supervisor/conf.d/lxsession.conf'}
