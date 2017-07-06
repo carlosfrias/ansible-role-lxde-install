@@ -4,6 +4,7 @@ os_packages:
 - supervisor
 - tree
 - vim-tiny
+- xvfb
 
 lxde_packages:
 - xorg
@@ -13,3 +14,4 @@ lxde_packages:
 template_files:
 - { src: 'supervisord.conf.j2', dest: '/etc/supervisor/supervisord.conf'}
 - { src: 'lxsession-supervisord.conf.j2', dest: '/etc/supervisor/conf.d/lxsession.conf'}
+- { src: 'xvfb-supervisord.conf.j2', dest: '/etc/supervisor/conf.d/xvfb.conf'}
