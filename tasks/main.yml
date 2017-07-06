@@ -19,7 +19,7 @@
     dest: "{{ item.dest }}"
   with_items:
   - { src: 'supervisord.conf.j2', dest: '/etc/supervisor/supervisord.conf'}
-  - { src: 'lxsession-supervisord.conf.j2', dest: '/etc/supervisor/lxsession.conf'}
+  - { src: 'lxsession-supervisord.conf.j2', dest: '/etc/supervisor/conf.d/lxsession.conf'}
   notify:
   - "Restart Supervisor"
 
