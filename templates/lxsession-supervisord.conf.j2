@@ -1,11 +1,11 @@
 [program:lxsession]
 priority=10
-directory=/root
+directory=/home/{{ username }}
 command=/usr/bin/lxsession
-user=root
+user={{ username }}
 autostart=true
 autorestart=true
 stopsignal=QUIT
-environment=DISPLAY=":1",HOME="/root"
+environment=DISPLAY=":1",HOME="/home/{{ username }}"
 stdout_logfile=/var/log/lxsession.log
 redirect_stderr=true
