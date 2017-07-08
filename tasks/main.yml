@@ -27,5 +27,5 @@
   with_items:
   - "{{ template_files }}"
   notify:
-  - "Restart Supervisor"
+  - "Start Supervisor"
 
