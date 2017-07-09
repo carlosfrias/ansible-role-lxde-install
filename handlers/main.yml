@@ -1,2 +1,6 @@
 ---
 # handlers file for roles/ansible-role-lxde-install
+- name: Start Supervisor
+  service:
+    name: supervisor
+    state: restarted
