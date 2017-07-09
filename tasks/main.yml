@@ -27,7 +27,7 @@
   with_items:
   - "{{ template_files }}"
 
--block:
+- block:
   - name: Start Supervisor
     service:
       name: supervisor
