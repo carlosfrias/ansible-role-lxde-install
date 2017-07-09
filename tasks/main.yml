@@ -27,8 +27,8 @@
   with_items:
   - "{{ template_files }}"
 
-  - name: Start Supervisor
-    service:
-      name: supervisor
-      state: restarted
-      enabled: yes
+- name: Start Supervisor
+  service:
+    name: supervisor
+    state: restarted
+    enabled: yesß
