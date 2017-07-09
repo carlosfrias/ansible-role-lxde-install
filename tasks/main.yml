@@ -26,6 +26,9 @@
     dest: "{{ item.dest }}"
   with_items:
   - "{{ template_files }}"
-  notify:
-  - "Start Supervisor"
 
+  - name: Start Supervisor
+    service:
+      name: supervisor
+      state: restarted
+      enabled: yes
