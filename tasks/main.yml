@@ -31,4 +31,4 @@
   service:
     name: supervisor
     state: restarted
-    enabled: yesß
+    enabled: yes
